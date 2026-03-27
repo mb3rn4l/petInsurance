@@ -72,30 +72,30 @@ pytest
 
 ---
 
-## 🗄️ Gestión de la Base de Datos (Migraciones)
+## 🗄️ Database Management (Migrations)
 
-Si realizas cambios en los modelos de datos o necesitas inicializar la base de datos desde cero, utiliza los siguientes comandos dependiendo de tu entorno:
+If you make changes to the data models or need to initialize the database from scratch, use the following commands depending on your environment:
 
-### A. Si usas Docker Compose (Recomendado)
-Ejecuta estos comandos en una terminal aparte mientras los contenedores están activos:
+### A. If you use Docker Compose (Recommended)
+Run these commands in a separate terminal while the containers are active:
 
-*   **Aplicar migraciones pendientes:**
+*   **Apply pending migrations:**
     ```bash
     docker-compose exec backend python manage.py migrate
     ```
-*   **Crear nuevas migraciones (tras cambios en models.py):**
+*   **Create new migrations (after changes in models.py):**
     ```bash
     docker-compose exec backend python manage.py makemigrations
     ```
 
-### B. Si usas Ejecución Manual (venv)
-Asegúrate de estar en la carpeta `backend` y con el entorno virtual activado:
+### B.If you use Manual Execution (venv)
+Make sure you are in the `backend` folder and with the virtual environment enabled:
 
-*   **Aplicar migraciones:**
+*   **Apply migrations:**
     ```bash
     python manage.py migrate
     ```
-*   **Crear nuevas migraciones:**
+*   **Create new migrations:**
     ```bash
     python manage.py makemigrations
     ```
